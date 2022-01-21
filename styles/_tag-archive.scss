@@ -1,0 +1,52 @@
+.custom-archive {
+  .post-header {
+    margin-bottom: 4rem;
+  }
+}
+.custom-page-post-content {
+  text-align: center;
+  margin: 0 auto 4rem;
+  font-size: 1.5rem;
+  max-width: 780px;
+}
+.archive-card {
+  border-radius: var(--size-4);
+  overflow: hidden;
+  margin-bottom: 3rem;
+  .tag-image-wrap {
+    width: 100%;
+    padding-bottom: 80%;
+    position: relative;
+    background-color: var(--c-gray-lighter);
+    border-radius: var(--size-4);
+    overflow: hidden;
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      -o-object-fit: cover;
+      object-fit: cover;
+    }
+  }
+  a {
+    color: var(--c-text-main);
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .card-title span:hover {
+    text-decoration: underline;
+  }
+  .tag-info-wrap {
+    padding: 1.5rem 1rem;
+    .card-title {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .post-count {
+      font-weight: 700;
+    }
+  }
+}

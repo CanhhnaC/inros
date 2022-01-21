@@ -1,0 +1,66 @@
+/*=====================================================
+    Fonts
+=====================================================*/
+:root {
+  --font-family: 'Roboto', sans-serif;
+}
+/*=====================================================
+    light theme colors ( as SCSS mixin )
+=====================================================*/
+@mixin theme-light {
+  --c-body-bg: #ffffff;
+  --c-text-main: #161f38;
+  --c-text-light: #575861;
+  --c-gray-light: #efefef;
+  --c-gray-lighter: #f9f9f9;
+  --c-border: #dadce5;
+  --c-border-light: var(--c-gray-light);
+  --c-shadow: 0 15px 40px 5px rgba(132, 132, 133, 0.15);
+}
+/*=====================================================
+    dark theme colors ( as SCSS mixin )
+=====================================================*/
+@mixin theme-dark {
+  --c-body-bg: #272935;
+  --c-text-main: #f9f9fa;
+  --c-text-light: #b2b2b3;
+  --c-gray-light: #454854;
+  --c-gray-lighter: #303340;
+  --c-border: #35394b;
+  --c-border-light: var(--c-gray-light);
+  --c-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+/*=====================================================
+    common variables ( as SCSS mixin )
+    define common variable for light and dark here
+=====================================================*/
+@mixin common-vars {
+  /* setting theme color to ghost accent color. By default we used #FF3A46 */
+  --c-theme: #0066ff;
+  --logo-header-height: 40px;
+  --logo-footer-height: 40px;
+  --c-white: #ffffff;
+  --c-black: #000000;
+  --c-success: #96ea8c;
+  --c-error: #ff9b84;
+  --c-button-text: var(--c-white);
+  --size-1: 4px;
+  --size-2: 8px;
+  --size-3: 16px;
+  --size-4: 24px;
+}
+/*=====================================================
+    ⚠ WARNING: please do not edit below this line,
+    incorrect coding may break the theme
+
+    Merging common variables with light and dark
+    separately
+=====================================================*/
+:root {
+  @include common-vars;
+  @include theme-light;
+}
+[data-theme='dark'] {
+  @include common-vars;
+  @include theme-dark;
+}

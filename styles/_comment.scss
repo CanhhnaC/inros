@@ -1,0 +1,15 @@
+.comment-wrap {
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--shadow);
+}
+.comment-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.comment-placeholder {
+  &.is-hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,157 @@
+.archive-cover {
+  position: relative;
+  margin-bottom: 5rem;
+  border-radius: var(--size-4);
+  overflow: hidden;
+  .cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.cover-content-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  border-radius: var(--size-4);
+  text-align: center;
+  .avatar-wrap {
+    width: 136px;
+    height: 136px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: var(--c-gray-light);
+      &.no-image {
+        svg {
+          color: var(--c-text-main);
+          width: 120%;
+          height: 120%;
+          margin-left: -10%;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .author-info {
+    flex: 1 0 0;
+    .name {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  .author-meta {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    & > *:not(:last-child) {
+      &::after {
+        content: '•';
+        margin-left: 8px;
+        position: absolute;
+        display: inline-block;
+        font-weight: 700;
+      }
+    }
+    & > *:not(:first-child) {
+      margin-left: 18px;
+    }
+  }
+  .bio {
+    font-size: 1.125rem;
+  }
+  .author-social {
+    margin-top: 1rem;
+    a {
+      color: var(--c-text-main);
+      margin: 0 8px;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      svg {
+        width: 20px;
+      }
+      &:hover {
+        color: var(--c-primary-main);
+      }
+    }
+  }
+  .tag-info-wrap {
+    .tag-name {
+      margin-top: 0;
+    }
+    .tag-post-count {
+      font-weight: 700;
+    }
+    .tag-description {
+      margin-top: 1rem;
+      font-size: 1.125rem;
+    }
+  }
+}
+.cover-author {
+  .cover-content-wrapper {
+    max-width: 700px;
+  }
+}
+.archive-cover-inner {
+  &.has-image {
+    padding: 8rem 1rem;
+    background: var(--c-gray-lighter);
+    .cover-content-wrapper {
+      padding: 2rem;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: var(--c-body-bg);
+        border-radius: var(--size-4);
+        opacity: 1;
+      }
+      .avatar-wrap,
+      .author-info,
+      .tag-info-wrap {
+        position: relative;
+      }
+    }
+  }
+}
+@media (max-width: 557px) {
+  .archive-cover {
+    margin-bottom: 3rem;
+  }
+  .archive-cover-inner {
+    &.has-image {
+      padding: 1rem;
+      background-color: var(--c-gray-lighter);
+    }
+  }
+  .cover-content-wrapper {
+    .avatar-wrap {
+      margin-right: 0;
+    }
+    .author-info {
+      flex: 1 0 100%;
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  }
+  .cover-author {
+    .cover-content-wrapper {
+      justify-content: center;
+    }
+  }
+}

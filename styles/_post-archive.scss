@@ -1,0 +1,48 @@
+.archive-wrap {
+  max-width: 780px;
+  margin: 0 auto;
+  .py,
+  .pm {
+    padding-bottom: 8px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--c-border);
+  }
+}
+.archive-post {
+  position: relative;
+  .inner {
+    padding: 12px 0;
+    display: flex;
+  }
+  .post-date {
+    color: var(--c-text-light);
+    font-size: 0.875rem;
+    white-space: nowrap;
+    min-width: 58px;
+    line-height: 24px;
+    &::after {
+      display: none;
+    }
+  }
+  .title {
+    margin: 0;
+    font-size: 1.125rem;
+    a {
+      color: var(--c-text-main);
+      &:hover {
+        color: var(--c-text-main);
+      }
+    }
+  }
+}
+@for $i from 2011 through 2030 {
+  .py-#{$i} + .py-#{$i} .py {
+    display: none;
+  }
+}
+@for $i from 1 through 12 {
+  .pm-#{$i} + .pm-#{$i} .pm {
+    display: none;
+  }
+}
